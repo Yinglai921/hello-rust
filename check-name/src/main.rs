@@ -1,7 +1,7 @@
 use std::env;
 use std::fs;
 
-fn find_name(names: &std::string::String, search: &std::string::String) -> bool {
+fn find_name(names: &str, search: &str) -> bool {
     let mut res: bool = false;
     for line in names.lines() {
         if line.trim() == search {
