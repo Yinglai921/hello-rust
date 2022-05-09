@@ -13,3 +13,6 @@ How the rust project folder structure looks like
 ### Struct
 struct is like tuple but it's a group of multiple items of mixed data types
 elements are named
+associated function:
+    function associated with a struct data type
+    does not have a &self parameter
