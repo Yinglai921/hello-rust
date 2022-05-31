@@ -1,3 +1,5 @@
+use std::mem;
+
 #[derive(Debug, Clone)]
 
 struct FikaBread {
@@ -43,5 +45,24 @@ fn main() {
     println!("donuts name is {}", donuts_name);
 
     donuts.add_amount(5);
-    println!("donuts amount is {}", donuts.amount)
+    println!("donuts amount is {}", donuts.amount);
+
+    // donuts is no longer valid
+    // donuts is on the stack, boxed_donuts is on the heap
+    let boxed_donuts: Box<FikaBread> = Box::new(donuts);
+    println!(
+        "boxed_donuts size on stack: {} bytes",
+        mem::size_of_val(&boxed_donuts)
+    );
+
+    println!(
+        "boxed_donuts size on heap: {} bytes",
+        mem::size_of_val(&*boxed_donuts) // * dereference
+    );
+
+    let unboxed_donuts: FikaBread = *boxed_donuts;
+    println!(
+        "unboxed_donuts size on stack: {} bytes",
+        mem::size_of_val(&unboxed_donuts)
+    );
 }

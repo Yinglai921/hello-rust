@@ -2,6 +2,8 @@
 How the rust project folder structure looks like
 - hello-package
 
+crate: box, container
+
 ### Read input from cmd and files
 - input-and-output
 - check-name
@@ -10,12 +12,12 @@ How the rust project folder structure looks like
 - hello-enum
 - display-location
 
-### Struct
+### Struct (class?)
 struct is like tuple but it's a group of multiple items of mixed data types
 
 elements are named
 
-associated function:
+associated function: (static function?)
     
     function associated with a struct data type
     
@@ -28,7 +30,19 @@ Can be used with structs, functions, methods and more
 
 Defined with `<T>`
 
-### Trait
+#### `Box<T>` 
+- sum-boxes
+store data on the heap instead of on the stack 
+smart pointer: provide additional functions beyond references
+`Box<T>` has ownership of the heap
+use case for `Box<T>`:
+
+- store a type whose size cannot be known at compile time, example: recursive types
+- transfer ownership of data rather than copy it on the stack
+  - avoid copying large amount of data 
+
+### Trait (interface)
+(feature, character)
 Similar to interfaces in other programming languages
 
 A collection of methods
