@@ -51,7 +51,7 @@ Data types can implement a trait
 
 Generics use traits to specify the capabilities of unknown data types
 
-
+`impl {trait} for {struct}`
 
 
 
